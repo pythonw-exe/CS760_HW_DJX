@@ -147,29 +147,29 @@ plt.ylabel('Average accuracy')
 plt.title('KNN 5-fold cross validation')
 
 #Q3
-class LogisticRegression:
-    def __init__(self, learning_rate=0.1, max_iter=50):
-        self.learning_rate = learning_rate
-        self.num_iterations = max_iter
+# class LogisticRegression:
+#     def __init__(self, learning_rate=0.1, max_iter=50):
+#         self.learning_rate = learning_rate
+#         self.num_iterations = max_iter
     
-    def sigmoid(self, z):
-        return 1 / (1 + np.exp(-z))
+#     def sigmoid(self, z):
+#         return 1 / (1 + np.exp(-z))
     
-    def fit(self, X, y):
-        m, n = X.shape
-        self.theta = np.zeros((n, 1))
+#     def fit(self, X, y):
+#         m, n = X.shape
+#         self.theta = np.zeros((n, 1))
         
-        for i in range(self.num_iterations):
-            z = np.dot(X, self.theta)
-            h = self.sigmoid(z)
-            gradient = np.mean(np.dot(X.T, (h - y)) / m,1).reshape(-1,1)
-            self.theta -= self.learning_rate * gradient
+#         for i in range(self.num_iterations):
+#             z = np.dot(X, self.theta)
+#             h = self.sigmoid(z)
+#             gradient = np.mean(np.dot(X.T, (h - y)) / m,1).reshape(-1,1)
+#             self.theta -= self.learning_rate * gradient
     
-    def predict(self, X):
-        return np.round(self.sigmoid(np.dot(X, self.theta)))
+#     def predict(self, X):
+#         return np.round(self.sigmoid(np.dot(X, self.theta)))
 
-    def predict_proba(self, X):
-        return self.sigmoid(np.dot(X, self.theta))
+#     def predict_proba(self, X):
+#         return self.sigmoid(np.dot(X, self.theta))
 
 data, result = read_email('./emails.csv')
 
